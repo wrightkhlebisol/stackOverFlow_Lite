@@ -5,13 +5,13 @@ let router = express.Router();
 
 
 // GET /questions
-router.get("/", (req, res)=>{
+router.get("/v1/", (req, res)=>{
     // Return all the questions
     res.json({response: "You sent me a GET request"})
 });
 
 // POST /questions
-router.post("/", (req, res)=>{
+router.post("/v1/", (req, res)=>{
     // Route for creating questions
     res.json({
         response: "You sent me a POST request",
@@ -20,7 +20,7 @@ router.post("/", (req, res)=>{
 });
 
 // GET /questions/:qID
-router.get("/:qID", (req, res)=>{
+router.get("/v1/:qID", (req, res)=>{
     // Return specific questions
     res.json({
         response: `You sent me a GET request for ID ${req.params.qID}`
@@ -28,7 +28,7 @@ router.get("/:qID", (req, res)=>{
 });
 
 // POST /questions/:qID/answers
-router.post("/:qID/answers", (req, res)=>{
+router.post("/v1/:qID/answers", (req, res)=>{
     // Route for creating answers
     res.json({
         response: "You sent me a POST request to /answers",
@@ -38,7 +38,7 @@ router.post("/:qID/answers", (req, res)=>{
 });
 
 // PUT /questions/:qID/answers/:aID
-router.put("/:qID/answers/:aID", (req, res)=>{
+router.put("/v1/:qID/answers/:aID", (req, res)=>{
     // Edit a specific answer
     res.json({
         response: "You sent me a PUT request to /answers",
@@ -49,7 +49,7 @@ router.put("/:qID/answers/:aID", (req, res)=>{
 });
 
 // POST /questions/:qID/answers/:aID/vote-:int
-router.post("/:qID/answers/:aID/vote-:int", 
+router.post("/v1/:qID/answers/:aID/vote-:int", 
 (req, res, next)=>{
     if(req.params.int.search(/^(up|down)$/) === -1){
         let err = new Error("Not Found");
@@ -69,7 +69,7 @@ router.post("/:qID/answers/:aID/vote-:int",
 });
 
 // DELETE /questions/:qID/answers/:aID
-router.delete("/:qID/answers/:aID", (req, res)=>{
+router.delete("/v1/:qID/answers/:aID", (req, res)=>{
     // Vote a specific answer up or down
     res.json({
         response: `You sent me a DELETE request to /answers`,
