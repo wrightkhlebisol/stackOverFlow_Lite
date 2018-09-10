@@ -1,4 +1,10 @@
 [![Build Status](https://travis-ci.com/wrightkhlebisol/stackOverFlow_Lite.svg?branch=master)](https://travis-ci.com/wrightkhlebisol/stackOverFlow_Lite)
+
+[![Coverage Status](https://coveralls.io/repos/github/wrightkhlebisol/stackOverFlow_Lite/badge.svg?branch=master)](https://coveralls.io/github/wrightkhlebisol/stackOverFlow_Lite?branch=master)
+
+[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/wrightkhlebisol/stackOverFlow_Lite)
+
+
 # stackOverFlow_Lite 
 
 # StackOverflow-lite API in node and postgre for asking and answering questions
