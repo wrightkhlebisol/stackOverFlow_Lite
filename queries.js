@@ -44,8 +44,8 @@ let getSingleQuestion = (req, res, next) => {
 
   let createQuestion = (req, res, next) => {
     req.body.age = parseInt(req.body.age);
-    db.none('insert into questions(name, breed, age, sex)' +
-        'values(${name}, ${breed}, ${age}, ${sex})',
+    db.none('insert into questions(question, ownerId, totalAnswers)' +
+        'values(${question}, ${owner}, ${totAns})',
       req.body)
       .then(function () {
         res.status(200)
@@ -60,9 +60,8 @@ let getSingleQuestion = (req, res, next) => {
   }
 
   let updateQuestion = (req, res, next) => {
-    db.none('update questions set name=$1, breed=$2, age=$3, sex=$4 where id=$5',
-      [req.body.name, req.body.breed, parseInt(req.body.age),
-        req.body.sex, parseInt(req.params.id)])
+    db.none('update questions set question=$1, ownerId=$2, totalAnswers=$3 where id=$5',
+      [req.body.question, req.body.owner, parseInt(req.body.totAns), parseInt(req.params.id)])
       .then(function () {
         res.status(200)
           .json({
