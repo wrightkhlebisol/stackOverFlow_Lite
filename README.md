@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/wrightkhlebisol/stackOverFlow_Lite.svg?branch=master)](https://travis-ci.com/wrightkhlebisol/stackOverFlow_Lite)
 # stackOverFlow_Lite 
 
 # StackOverflow-lite API in node and postgre for asking and answering questions
